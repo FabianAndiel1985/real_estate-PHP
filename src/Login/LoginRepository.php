@@ -26,14 +26,17 @@ class LoginRepository extends AbstractRepository  {
         extract($credentials);
         // TODO alles herunter fetchen und Passwort miteinander vergleichen
         $tablemame = $this->getTableName();
-        $statement = $this->pdo->prepare("SELECT username from $tablemame where password = ?");
-        $statement->execute(array($password));
-        $username = $statement->fetch();
-        if($username) {
+        $statement = $this->pdo->prepare("SELECT password from $tablemame where username = ?");
+        $statement->execute(array($username));
+        $result = $statement->fetch();
+        $hashedPassword = $result["password"];
+        
+        if(password_verify($password, $hashedPassword)) {
             header("Location: admin-board");
         }
         
         else {
+            
         }
 
     }
