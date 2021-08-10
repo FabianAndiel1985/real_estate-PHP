@@ -1,3 +1,7 @@
+
+<p> <?php var_dump($_SESSION["user"]); ?>
+ </p>
+
 <h1> Hi am the admin board</h1>
 
 

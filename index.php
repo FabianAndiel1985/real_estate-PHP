@@ -7,6 +7,8 @@ require "./src/init.php"; ?>
 
 <?php
 
+session_start();
+
 $pathinfo = $_SERVER["PATH_INFO"];
 
 $routes= [

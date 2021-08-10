@@ -32,11 +32,13 @@ class LoginRepository extends AbstractRepository  {
         $hashedPassword = $result["password"];
         
         if(password_verify($password, $hashedPassword)) {
+            $_SESSION["user"] = $username;
+            session_regenerate_id(true);    
             header("Location: admin-board");
         }
         
         else {
-            
+
         }
 
     }
