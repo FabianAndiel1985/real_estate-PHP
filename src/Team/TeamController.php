@@ -14,6 +14,7 @@ class TeamController extends AbstractController {
 
     public function showTeampage() {    
        $params = $this->teamRepo->fetchAll();
+       print_r($params);
        $this->render("team",
        [
            'params'=> $params 

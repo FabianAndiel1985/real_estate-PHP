@@ -13,6 +13,7 @@ class LoginController extends AbstractController  {
     }
 
     public function showLogin () {
+       
         $this->render("login",[]);
         
         if(!empty($_POST)){

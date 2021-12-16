@@ -22,7 +22,7 @@ class Container   {
     
         $this->buildManuals = [
             'pdo'=> function () {
-                $pdo = new PDO('mysql:host=localhost;dbname=vanillaPHP;charset=utf8', 'root', '');
+                $pdo = new PDO('mysql:host=localhost;dbname=vanillaphp;charset=utf8', 'root', '');
                 $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
                 return $pdo;
             },
